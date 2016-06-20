@@ -1,0 +1,26 @@
+body {
+  font-family: 'Miscosoft Yahei', Arial;
+}
+header,
+footer {
+  line-height: 44px;
+  background: #43a08d;
+  color: #fff;
+  text-align: center;
+}
+.main-wrapper {
+  max-width: 1190px;
+  margin: 0 auto;
+  min-height: 600px;
+}
+.main-wrapper h2,
+.main-wrapper ul {
+  margin: 12px 0;
+}
+.main-wrapper ul {
+  margin-top: 24px;
+}
+a {
+  text-decoration: none;
+  color: #43a08d;
+}

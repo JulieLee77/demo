@@ -1,3 +1,6 @@
+body {
+  font-family: 'Miscosoft Yahei', Arial;
+}
 header,
 footer {
   position: absolute;
