@@ -1,0 +1,29 @@
+header,
+footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: #43a08d;
+  line-height: 44px;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+}
+header {
+  top: 0;
+}
+footer {
+  bottom: 0;
+}
+.main-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 44px 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.main-wrapper p {
+  line-height: 24px;
+}
