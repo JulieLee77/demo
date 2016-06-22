@@ -1,13 +1,86 @@
+.align-center {
+  text-align: center;
+}
+.align-center > div,
+.align-center:after {
+  display: inline-block;
+  vertical-align: middle;
+}
+.align-center:after {
+  width: 0;
+  height: 100%;
+  content: '';
+}
+.border-top-1px {
+  position: relative;
+}
+.border-top-1px:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #e7e7e7;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.border-bottom-1px {
+  position: relative;
+}
+.border-bottom-1px:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid #e7e7e7;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.border-left-1px {
+  position: relative;
+}
+.border-left-1px:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid #e7e7e7;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.border-right-1px {
+  position: relative;
+}
+.border-right-1px:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-right: 1px solid #e7e7e7;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
 body {
-  font-family: 'Miscosoft Yahei', Arial;
+  font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", Arial, sans-serif;
 }
 header,
 footer {
   position: absolute;
   left: 0;
   right: 0;
-  background: #43a08d;
-  line-height: 44px;
+  background: green-1;
+  line-height: norm-height;
   z-index: 1;
   text-align: center;
   color: #fff;

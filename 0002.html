@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+  <title>pay password</title>
+  <link rel="stylesheet" href="css/0002.css">
+</head>
+<body v-cloak>
+<section class="main-wrapper">
+  <h2>h5支付密码弹出框</h2>
+  <input type="button" class="btn confirm-btn" @click="showInputPwd()" value="确认支付">
+</section>
+
+<!--pay password-->
+<input type="tel" v-model="pwd" class="pwdInput" maxlength="6" @keydown="pwdKeyDown($event)" v-el:pwd v-if="lockPwd||!planed"><!--solve ios focus() bug-->
+<section class="mask pwd" v-show="inputPwd">
+  <div class="modal">
+    <div class="modal-content">
+      <h4>请输入6位数支付密码</h4>
+      <div class="pwd-box">
+        <ul @click.prevent="focusPwd()"><li v-for="item in 6" track-by="$index"><span v-if="pwd.length>$index"></span></li></ul>
+      </div>
+    </div>
+    <div class="footer clearfix">
+      <div><input type="button" value="取消" @click="inputPwd=false"/></div>
+      <div><input type="button" value="确定" :disabled="pwd===null||pwd===undefined||pwd.length<pwdLength" @click="submitPlan()"/></div>
+    </div>
+  </div>
+</section>
+
+<div class="load-wrapper transparent" v-if="paying">
+  <div class="load-inner">
+    <span class="load"></span>
+    <span class="load-status">正在支付</span>
+  </div>
+</div>
+<!--错误提示-->
+<div class="tooltip" v-if="showTip">
+  <div v-el:tip></div>
+</div>
+
+<!--支付密码已锁定-->
+<section v-if="lockPwd" class="mask">
+  <div class="modal">
+    <div class="modal-content">
+      <h4>你的支付密码已锁定，是否修改支付密码</h4>
+    </div>
+    <div class="footer">
+      <a href="javascript:void(0)" @click="lockpwd=false">取消</a><a href="gezi://openIntent?action=paypassword&callbackMethod=reload()">去修改</a>
+    </div>
+  </div>
+</section>
+<script src="lib/vue/vue-1.0.24.min.js"></script>
+<script src="lib/jquery/jquery-3.0.0.min.js"></script>
+<script src="js/0002.js"></script>
+</body>
+</html>

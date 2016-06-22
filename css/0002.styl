@@ -1,0 +1,217 @@
+@import 'variables'
+//base
+html
+  font-family fontFamily
+  -ms-text-size-adjust 100%
+  -webkit-text-size-adjust 100%
+  color gray-8
+
+body
+  margin 0
+  background gray-3
+  vendor user-select none
+
+ul, input[type=button] //input[type=button] ios
+  padding 0
+
+ul li
+  list-style none
+  box-sizing content-box
+
+input[type=button]
+  vendor appearance button
+  cursor pointer
+  border none
+  outline none
+/*vue v-cloak*/
+[v-cloak]
+  display none
+
+input[type=button][disabled], input.btn[type=button][disabled], .disabled
+  background gray-5 !important
+  opacity 1//ios .4
+//yelolow btn
+.btn
+  background -webkit-linear-gradient(left, yellow-4, yellow-5)
+  background linear-gradient(left, yellow-4, yellow-5)
+  color gray-1
+  border-radius 2px
+  display block
+  text-align center
+  font-size font-16
+
+.mask
+  position absolute
+  top 0
+  left 0
+  right 0
+  bottom 0
+  z-index 99
+  overflow hidden
+  background mask-bg
+  @extend .align-center
+  .modal
+    box-sizing border-box
+    background-color gray-1
+    width 75%
+    padding 0 gap-12
+    border-radius 5px
+    .modal-content
+      padding gap-16 0
+      @extend .border-bottom-1px
+      h3
+        color gray-9
+        font-size font-16
+
+//loading
+.load-wrapper
+  position fixed
+  top 0
+  left 0
+  right 0
+  bottom 0
+  &:not(.transparent)
+    background gray-1
+    z-index 9999
+  &.transparent
+    z-index 9998
+    background transparent
+  @extend .align-center
+
+.load-inner
+  width 80px
+  height 80px
+  color gray-1
+  background mask-bg
+  border-radius 8px
+  .load
+    display block
+    margin gap-8 auto
+    width 37px
+    height 37px
+    background url(/static/img/base/loading_white.png) no-repeat;
+    background-size 444px auto;
+    vendor animation (loading-rotate 1s steps(12) infinite 0s)
+  .load-status
+    display block
+    font-size font-12
+
+@-webkit-keyframes loading-rotate
+  from
+    background-position 0 0
+  to
+    background-position -444px 0
+
+@keyframes loading-rotate
+  from
+    background-position 0 0
+  to
+    background-position -444px 0
+
+//tooltip
+.tooltip
+  position fixed
+  left 0
+  right 0
+  top 0
+  bottom 0
+  z-index 999
+  @extend .align-center
+  div
+    width 215px
+    padding gap-8 0
+    border-radius 5px
+    background mask-bg
+    p
+      padding 0 gap-6
+      line-height 2
+      font-size font-16
+      color gray-1
+
+//支付密码
+input.pwdInput[type=tel]
+  position fixed
+  top 50%
+  left -100%
+  padding 0
+  border none
+  color transparent
+  background transparent
+  &:focus
+    outline none
+
+.pwd .modal
+  .modal-content
+    padding gap-12 0
+    h4
+      padding-bottom gap-12
+  .pwd-box
+    width 100%
+    margin 0 auto
+    padding-top gap-12
+    text-align center
+    @extend .border-top-1px
+    ul
+      li
+        box-sizing border-box
+        display inline-block
+        width 16.667%
+        border-top 1px solid gray-4
+        border-right 1px solid gray-4
+        border-bottom 1px solid gray-4
+        &:after
+          content ''
+          display inline-block
+          vertical-align middle
+          width 0
+          height 100%
+        span
+          display inline-block
+          vertical-align middle
+          text-align center
+          width 10px
+          height 10px
+          border-radius 999px
+          background gray-8
+        &:not(:first-child)
+          border-left none
+        &:first-child
+          border-left 1px solid gray-4
+          border-top-left-radius 2px
+          border-bottom-left-radius 2px
+        &:last-child
+          border-top-right-radius 2px
+          border-bottom-right-radius 2px
+  .footer
+    div
+      box-sizing border-box
+      width 50%
+      margin gap-12 0
+      input[type=button]
+        width 100%
+        border none
+        line-height btn-height
+        border-radius 5px
+        font-size font-14
+        color gray-1
+        text-align center
+      &:first-child
+        float left
+        padding-right 6px
+        input[type='button']
+          background gray-5
+      &:last-child
+        float right
+        padding-left 6px
+        input[type=button]
+          background -webkit-linear-gradient(left,yellow-4,yellow-5)
+          background linear-gradient(left,yellow-4,yellow-5)
+//
+.main-wrapper
+  margin gap-12
+  text-align center
+h2
+  font-size 20px
+.confirm-btn
+  width 100px
+  height btn-height
