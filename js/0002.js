@@ -105,6 +105,7 @@ var vm = new Vue({
           _this.paying=false;
           console.log('fail' + ',' + error);
         });
+      this.$els.pwd.focus();
     }
   }
 });
