@@ -191,7 +191,7 @@ input.btn[type=button][disabled],
   margin: 8px auto;
   width: 37px;
   height: 37px;
-  background: url("/static/img/base/loading_white.png") no-repeat;
+  background: url("/images/loading_white.png") no-repeat;
   background-size: 444px auto;
   -webkit-animation: loading-rotate 1s steps(12) infinite 0s;
   animation: loading-rotate 1s steps(12) infinite 0s;
