@@ -18,18 +18,24 @@ ul li
   list-style none
   box-sizing content-box
 
+h2, h4, p
+  margin 0
+
 input[type=button]
   vendor appearance button
   cursor pointer
   border none
   outline none
+
 /*vue v-cloak*/
 [v-cloak]
   display none
 
 input[type=button][disabled], input.btn[type=button][disabled], .disabled
   background gray-5 !important
-  opacity 1//ios .4
+  opacity 1
+
+//ios .4
 //yelolow btn
 .btn
   background -webkit-linear-gradient(left, yellow-4, yellow-5)
@@ -204,14 +210,18 @@ input.pwdInput[type=tel]
         float right
         padding-left 6px
         input[type=button]
-          background -webkit-linear-gradient(left,yellow-4,yellow-5)
-          background linear-gradient(left,yellow-4,yellow-5)
+          background -webkit-linear-gradient(left, yellow-4, yellow-5)
+          background linear-gradient(left, yellow-4, yellow-5)
+
 //
 .main-wrapper
   margin gap-12
   text-align center
+
 h2
   font-size 20px
+  line-height 60px
+
 .confirm-btn
   width 100px
   height btn-height

@@ -107,6 +107,11 @@ ul li {
   list-style: none;
   box-sizing: content-box;
 }
+h2,
+h4,
+p {
+  margin: 0;
+}
 input[type=button] {
   -webkit-appearance: button;
   appearance: button;
@@ -319,7 +324,7 @@ input.pwdInput[type=tel]:focus {
 }
 h2 {
   font-size: 20px;
-  line-height: 1;
+  line-height: 60px;
 }
 .confirm-btn {
   width: 100px;

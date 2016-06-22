@@ -12,7 +12,7 @@ var vm = new Vue({
     showTip: false,
     list: null
   },
-  method: {
+  methods: {
     tooltip: function (str) {
       this.showTip = true;
       var _this = this;
@@ -21,7 +21,7 @@ var vm = new Vue({
       }, 100);
       setTimeout(function () {
         _this.$els.tip.innerHTML = '';
-        _this.$els.tip = false;
+        _this.showTip = false;
       }, 2000);
     },
     showInputPwd: function () {
@@ -29,19 +29,19 @@ var vm = new Vue({
         this.lockPwd = true;
         return;
       }
+      var _this = this;
       $.ajax({
-          url: '0002.json',
+          url: 'js/0002.json',
           method: 'GET',
           async: false//solve ios focus() bug
         })
-        .success(function (data) {
+        .done(function (data) {
           if (data.code === 2013) {//支付密码已锁定
-            this.lockPwd = true;
-            this.lastCode = data.code;
+            _this.lockPwd = true;
+            _this.lastCode = data.code;
           } else if (data.code === 0) {
-            this.inputPwd = true;
-            this.$set('pwd', null);
-            var _this = this;
+            _this.inputPwd = true;
+            _this.$set('pwd', null);
             setTimeout(function () {
               if (!_this.list) {
                 _this.list = document.querySelectorAll('.pwd-box li');
@@ -51,10 +51,10 @@ var vm = new Vue({
                 }
               }
             }, 100);
-            this.$els.pwd.focus();
+           _this.$els.pwd.focus();
           }
         })
-        .error(function (error) {
+        .fail(function (error) {
           console.log('fail' + ',' + error);
         });
     },
@@ -90,15 +90,19 @@ var vm = new Vue({
     },
     submitPlan: function () {
       //模拟密码输入错误
-      $.ajax('0002_error.json')
-        .success(function (data) {
+      this.paying=true;
+      var _this=this;
+      $.ajax('js/0002_error.json')
+        .done(function (data) {
+          _this.paying=false;
           if (data.code === 0) {
             location.href = '';
           } else {
-            this.isPwdError(data.code, data.msg);
+            _this.isPwdError(data.code, data.msg);
           }
         })
-        .error(function (error) {
+        .fail(function (error) {
+          _this.paying=false;
           console.log('fail' + ',' + error);
         });
     }
@@ -107,10 +111,10 @@ var vm = new Vue({
 
 window.reload = function () {
   $.get('0002.json')
-    .success(function (data) {
+    .done(function (data) {
       (!vm.lastCode || vm.lastCode != data.result.code) && location.reload();
     })
-    .error(function (error) {
+    .fail(function (error) {
       console.log(error);
     });
 };
