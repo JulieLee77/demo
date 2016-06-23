@@ -21,21 +21,29 @@ ul li
 h2, h4, p
   margin 0
 
+.clearfix
+  overflow hidden
+  &:before, &:break-after
+    content ''
+    display table
+    line-height 0
+  &:after
+    clear both
+
 input[type=button]
   vendor appearance button
   cursor pointer
   border none
   outline none
 
+input[type=button][disabled], input.btn[type=button][disabled], .disabled
+  background gray-5 !important
+  opacity 1  //ios .4
+
 /*vue v-cloak*/
 [v-cloak]
   display none
 
-input[type=button][disabled], input.btn[type=button][disabled], .disabled
-  background gray-5 !important
-  opacity 1
-
-//ios .4
 //yelolow btn
 .btn
   background -webkit-linear-gradient(left, yellow-4, yellow-5)
