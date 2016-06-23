@@ -19,10 +19,10 @@ var vm = new Vue({
       setTimeout(function () {
         _this.$els.tip.innerHTML = str;
       }, 100);
-      setTimeout(function () {
-        _this.$els.tip.innerHTML = '';
+      /*setTimeout(function () {
         _this.showTip = false;
-      }, 2000);
+        _this.$els.tip.innerHTML = '';
+      }, 2000);*/
     },
     showInputPwd: function () {
       if (this.lastCode === 2013) {
