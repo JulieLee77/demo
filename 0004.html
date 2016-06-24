@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+  <title>witch tab while touching left/right s</title>
+  <link rel="stylesheet" href="css/0004.css">
+</head>
+<body v-cloak>
+<ul class="tab-list border-tab">
+  <li v-for="item in tabNames" track-by="$index" :class="{'active':tabIndex==$index}"
+      :style="'width:'+100/tabNames.length+'%'" @click="tabIndex=$index"><a href="javascript:void(0)">{{item}}</a></li>
+</ul>
+<div class="main-wrapper">
+  <section v-if="tabIndex===0" class="area1">
+    <h4>Tab 1</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet deleniti dolore, dolores expedita id,
+      illum, molestiae non optio provident quia repudiandae! Aut, consequatur cum ducimus impedit iure labore vel.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid corporis deserunt, dolores, eos est
+      excepturi harum minima nesciunt officiis porro praesentium recusandae saepe sapiente tempore unde voluptas? Autem,
+      quae.</p>
+  </section>
+
+  <section v-if="tabIndex===1" class="area2">
+    <h4>Tab 2</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi corporis distinctio dolorem ex, harum,
+      itaque iusto laboriosam maxime natus numquam odio praesentium quia quibusdam quidem reprehenderit veniam vero
+      voluptas.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad commodi dolorem et, fugit illum impedit ipsa nam,
+      obcaecati odio qui, reprehenderit saepe sint voluptatum? Ab eaque non quia tempora voluptatum!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem deserunt, esse natus necessitatibus nostrum odio
+      pariatur porro quasi sint veritatis. Animi cumque cupiditate ea laborum nesciunt nulla porro qui ut.</p>
+  </section>
+
+  <section v-if="tabIndex===2" class="area3">
+    <h4>Tab 3</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores at aut deserunt dignissimos dolores
+      exercitationem illo illum in, iusto neque nesciunt recusandae sint sunt velit. Consectetur et omnis sequi.</p>
+  </section>
+</div>
+
+<script src="lib/vue/vue-1.0.24.min.js"></script>
+<script src="js/0004.js"></script>
+</body>
+</html>

@@ -77,7 +77,7 @@ body {
 header,
 footer {
   line-height: norm-height;
-  background: green-1;
+  background: #43a08d;
   color: #fff;
   text-align: center;
 }

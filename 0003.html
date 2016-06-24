@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+  <title>tip hide while touching</title>
+  <link rel="stylesheet" href="css/0003.css">
+</head>
+<body v-cloak>
+<section class="main-wrapper" v-el:main-wrapper>
+  <p>当触摸屏幕时,tip消失</p>
+</section>
+
+<section v-if="showTip" class="tip" transition="popup">
+  <p>温馨提示:...</p>
+</section>
+
+<footer>
+  <input type="button" class="btn" value="确定">
+</footer>
+
+<script src="lib/vue/vue-1.0.24.min.js"></script>
+<script src="js/0003.js"></script>
+</body>
+</html>

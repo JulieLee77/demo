@@ -1,0 +1,231 @@
+.align-center {
+  text-align: center;
+}
+.align-center > div,
+.align-center:after {
+  display: inline-block;
+  vertical-align: middle;
+}
+.align-center:after {
+  width: 0;
+  height: 100%;
+  content: '';
+}
+.border-top-1px {
+  position: relative;
+}
+.border-top-1px:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #e7e7e7;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.border-bottom-1px,
+.tab-list.border-tab {
+  position: relative;
+}
+.border-bottom-1px:after,
+.tab-list.border-tab:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid #e7e7e7;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.border-left-1px {
+  position: relative;
+}
+.border-left-1px:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid #e7e7e7;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.border-right-1px {
+  position: relative;
+}
+.border-right-1px:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-right: 1px solid #e7e7e7;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+html {
+  font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", Arial, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #515f68;
+}
+body {
+  margin: 0;
+  background: #f8f8f8;
+  -webkit-user-select: none;
+  user-select: none;
+}
+ul,
+input[type=button] {
+  padding: 0;
+}
+ul li {
+  list-style: none;
+  box-sizing: content-box;
+}
+h2,
+h4,
+p {
+  margin: 0;
+}
+.clearfix {
+  overflow: hidden;
+}
+.clearfix:before,
+.clearfix:break-after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+input[type=button] {
+  -webkit-appearance: button;
+  appearance: button;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+input[type=button][disabled],
+input.btn[type=button][disabled],
+.disabled {
+  background: #c7c7cc !important;
+  opacity: 1;
+}
+/*vue v-cloak*/
+[v-cloak] {
+  display: none;
+}
+.btn {
+  background: -webkit-linear-gradient(left, #ffb227, #f90);
+  background: linear-gradient(left, #ffb227, #f90);
+  color: #fff;
+  border-radius: 2px;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1;
+}
+.tab-list.two-tab li {
+  width: 50%;
+}
+.tab-list.three-tab li {
+  width: 33.333%;
+}
+.tab-list li {
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 14px;
+  text-align: center;
+  line-height: 44px;
+}
+.tab-list.border-tab {
+  box-sizing: border-box;
+}
+.tab-list.border-tab li a {
+  position: relative;
+  display: inline-block;
+  height: 44px;
+}
+.tab-list.border-tab li.active a {
+  color: #3c76e9;
+}
+.tab-list.border-tab li.active a:after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  width: 100%;
+  height: 4px;
+  content: '';
+  background: #3c76e9;
+  border-radius: 999px;
+}
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+footer .btn {
+  height: 44px;
+  line-height: 44px;
+  border-radius: 0;
+  width: 100%;
+}
+.tip {
+  position: fixed;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.tip p {
+  display: inline-block;
+  line-height: 32px;
+  box-sizing: border-box;
+  padding: 0 8px;
+  min-width: 132px;
+  background: #ffeea8;
+  font-size: 16px;
+  border-radius: 5px;
+  color: #f90;
+}
+.tip p:after {
+  position: absolute;
+  left: 49%;
+  bottom: -16px;
+  content: '';
+  border-style: solid;
+  border-width: 8px;
+  border-color: #ffeea8 transparent transparent transparent;
+}
+.popup-transition {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.popup-enter,
+.popup-leave {
+  -webkit-transform: translateY(90px);
+  transform: translateY(90px);
+}
+.main-wrapper {
+  padding-bottom: 44px;
+  min-height: 1000px;
+}
+.main-wrapper p {
+  font-size: 20px;
+  line-height: 44px;
+}

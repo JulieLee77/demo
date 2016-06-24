@@ -1,0 +1,139 @@
+@import 'variables'
+//base
+html
+  font-family fontFamily
+  -ms-text-size-adjust 100%
+  -webkit-text-size-adjust 100%
+  color gray-8
+
+body
+  margin 0
+  background gray-3
+  vendor user-select none
+
+ul, input[type=button] //input[type=button] ios
+  padding 0
+
+ul li
+  list-style none
+  box-sizing content-box
+
+h2, h4, p
+  margin 0
+
+.clearfix
+  overflow hidden
+  &:before, &:break-after
+    content ''
+    display table
+    line-height 0
+  &:after
+    clear both
+
+input[type=button]
+  vendor appearance button
+  cursor pointer
+  border none
+  outline none
+
+input[type=button][disabled], input.btn[type=button][disabled], .disabled
+  background gray-5 !important
+  opacity 1  //ios .4
+
+/*vue v-cloak*/
+[v-cloak]
+  display none
+
+//yelolow btn
+.btn
+  background -webkit-linear-gradient(left, yellow-4, yellow-5)
+  background linear-gradient(left, yellow-4, yellow-5)
+  color gray-1
+  border-radius 2px
+  display block
+  text-align center
+  font-size font-16
+
+
+//tab-list
+.tab-list
+  &.two-tab li
+    width 50%
+  &.three-tab li
+    width 33.333%
+  &.border-tab
+    @extend .border-bottom-1px
+  li
+    box-sizing border-box
+    display inline-block
+    font-size font-14
+    text-align center
+    line-height btn-height
+  &.border-tab
+    box-sizing border-box
+    li
+      a
+        position relative
+        display inline-block
+        height btn-height
+      &.active a
+        color blue-3
+        &:after
+          position absolute
+          left 0
+          right 0
+          bottom 1px
+          width 100%
+          height 4px
+          content ''
+          background blue-3
+          border-radius 999px
+
+//footer btn
+footer
+  position fixed
+  left 0
+  right 0
+  bottom 0
+  z-index 1
+  .btn
+    height btn-height
+    line-height btn-height
+    border-radius 0
+    width 100%
+
+.tip
+  position fixed
+  bottom 60px
+  left 0
+  right 0
+  text-align center
+  p
+    display inline-block
+    line-height 32px
+    box-sizing border-box
+    padding 0 gap-8
+    min-width 132px
+    background yellow-11
+    font-size font-16
+    border-radius 5px
+    color yellow-5
+    &:after
+      position absolute
+      left 49%
+      bottom -16px
+      content ''
+      border-style solid
+      border-width 8px
+      border-color yellow-11 transparent transparent transparent
+.popup-transition
+  vendor transition (all .5s ease-in-out)
+.popup-enter,.popup-leave
+  vendor transform translateY(90px)
+//main-wrapper
+.main-wrapper
+  padding-bottom btn-height
+  min-height 1000px
+  p
+    font-size 20px
+    line-height btn-height
