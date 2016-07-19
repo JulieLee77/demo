@@ -59,15 +59,15 @@ var vm = new Vue({
         });
     },
     pwdKeyDown: function (event) {
-      var returnVal = true;
+      var flag = true;
       if (event.keyCode >= 48 && event.keyCode <= 57) { //0-9
-        (this.pwd !== null && this.pwd !== undefined && this.pwd.length == this.pwdLength) && (returnVal = false); //密码已输完,禁止继续输入
-      } else if (event.keyCode === 13) {//enter
-        this.pwd !== null && this.pwd !== undefined && this.pwd.length === this.pwdLength && this.submitPlan();//若已输完6位,则enter提交
-      } else if (event.keyCode !== 8 && event.keyCode !== 46) {//非 delete & backspace
-        returnVal = false;
+        (this.pwd !== null && this.pwd !== undefined && this.pwd.length == this.pwdLength) && (flag = false); //密码已输完,禁止继续输入
+      } else if (event.keyCode === 13) { //enter
+        this.pwd !== null && this.pwd !== undefined && this.pwd.length === this.pwdLength && this.submitPlan(); //若已输完6位,则enter提交
+      } else if (event.keyCode !== 8 && event.keyCode !== 46) { //非 delete & backspace
+        flag = false;
       }
-      event.returnValue = returnVal;
+      !flag && event.preventDefault();
     },
     focusPwd: function () {
       this.$els.pwd.focus();
