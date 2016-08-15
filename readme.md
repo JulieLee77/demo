@@ -10,4 +10,4 @@
 
 0005 [移动端H5模拟手势密码](https://julielee77.github.io/demo/0005.html) －－待完成
 
-0005 [数据可视化－echarts体验](https://julielee77.github.io/demo/0006.html) －－待完成
+0006 [数据可视化－echarts体验](https://julielee77.github.io/demo/0006.html) －－待完成
