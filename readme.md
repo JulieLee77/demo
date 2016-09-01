@@ -1,5 +1,5 @@
 ##移动端html5问题探索
-大部分demo需在移动端
+大部分demo需在移动端打开
 
 0001 [position:fixed问题解决](https://julielee77.github.io/demo/0001.html)
 
