@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="X-UA-compatible" charset="IE-edge,chrome">
+  <title>Vue pagination</title>
+  <link rel="stylesheet" type="text/css" href="css/0007.css">
+</head>
+<body v-cloak>
+  <div class="item" v-for="item in items">
+    <h4>Name: {{item.name}}</h4>
+    <p>Age: {{item.age}}</p>
+  </div>
+  
+  
+  <ul class="pagination">
+  <li class="prev" v-if="pageIndex>1"><a href="javascript:void(0)" @click="prev">上一页</a></li>
+  <template  v-if="pageNumber<=limit">  
+  <li v-for="n in pageNumber"><a href="javascript:void(0)" @click="selPage(n+1)" :class="{'active':n+1==pageIndex}">{{n+1}}</a></li>
+  </template>
+  <template v-if="pageNumber>limit">
+  <li v-for="n in pageNumber" v-if="n<=1||(n>=pageIndex-2 && n<=pageIndex) || (n>pageNumber-3 && n<=pageNumber-1)"><span class="hide" :data-index="n+1">...</span><a href="javascript:void(0)" @click.stop="selPage(n+1)" :class="{'active':n+1==pageIndex}">{{n+1}}</a>
+  </template>
+  <li class="next"><a href="javascript:void(0)" @click="next">下一页</a></li>
+  </ul>
+  <script src="//cdn.bootcss.com/vue/1.0.26/vue.min.js"></script>
+  <script src="//cdn.bootcss.com/vue-resource/0.9.3/vue-resource.min.js"></script>
+  <script src="js/0007.js"></script>
+</body>
+</html>
