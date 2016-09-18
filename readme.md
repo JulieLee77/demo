@@ -13,4 +13,4 @@
 
 0006 [数据可视化－echarts体验](https://julielee77.github.io/demo/0006.html)
 
-0007 [Vue实现分页](https://julielee77.github.io/demo/0006.html)
+0007 [Vue实现分页](https://julielee77.github.io/demo/0007.html)
