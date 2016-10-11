@@ -4,7 +4,7 @@
 var vm=new Vue({
   el:'body',
   data:{
-    tabNames:['Tab1','Tab2','Ta3'],
+    tabNames:['Tab1','Tab2','Tab3'],
     tabIndex:0
   },
   computed:{
